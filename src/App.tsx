@@ -51,8 +51,8 @@ import {
   FaFingerprint,
   FaShieldAlt,
   FaCamera,
-  FaMobileAlt,
-  FaCalendarCheck,
+  // FaMobileAlt, // Supprimé - non utilisé
+  // FaCalendarCheck, // Supprimé - non utilisé
   FaMagic,
   FaStar,
   FaBolt as FaZap,
@@ -225,7 +225,7 @@ function SlideBadge({ n, label, dark = false, icon: Icon }: { n: string; label: 
   );
 }
 
-/* ───────────────────────── Slide 1 — Cover (TEXTE EN BLANC) ───────────────────────── */
+/* ───────────────────────── Slide 1 — Cover ───────────────────────── */
 function Slide1() {
   return (
     <Section id="top" dark className="min-h-screen flex items-center">
@@ -256,11 +256,10 @@ function Slide1() {
           </div>
           
           <div className="relative">
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-white leading-[1.02] relative z-10">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-[1.02] relative z-10">
               <span className="text-white/5 absolute -top-4 left-0 text-7xl md:text-9xl lg:text-9xl font-black tracking-wider whitespace-nowrap select-none -z-10">
                 Le sport
               </span>
-              {/* Texte en blanc pur */}
               <span className="block text-white font-black">Le sport</span>
               <span className="block text-white font-black">est</span>
               <span className="block bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent font-black">
@@ -961,7 +960,7 @@ function Slide8() {
   );
 }
 
-/* ───────────────────────── Slide 9 — Contact / Conclusion (TEXTE EN BLANC) ───────────────────────── */
+/* ───────────────────────── Slide 9 — Contact / Conclusion ───────────────────────── */
 function Slide9() {
   return (
     <Section id="contact" dark className="min-h-screen flex items-center">
@@ -988,7 +987,6 @@ function Slide9() {
         </div>
         
         <h2 className="font-display text-4xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl mx-auto">
-          {/* Texte en blanc pur */}
           <span className="block text-white font-black">Le futur du sport</span>
           <span className="block text-white font-black">est en train de</span>
           <span className="block bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent font-black">
@@ -1066,19 +1064,19 @@ function Slide9() {
   );
 }
 
-/* ───────────────────────── Slide 10 — QR Codes (AVEC IMAGES) ───────────────────────── */
+/* ───────────────────────── Slide 10 — QR Codes ───────────────────────── */
 function Slide10() {
   const qrCodes = [
     {
-      title: "consulter le site ",
-      desc: "Scannez pour consulter l'application PlayForest sur votre smartphone.",
+      title: "Télécharger l'app",
+      desc: "Scannez pour télécharger l'application PlayForest sur votre smartphone.",
       image: appQr,
       color: "#39ff14",
       store: "App Store & Play Store",
     },
     {
-      title: "Consultation du tableau de bord gestionnaire",
-      desc: "Scannez pour voir  le tableau de bord gestionnaire.",
+      title: "Réserver un terrain",
+      desc: "Scannez pour réserver votre terrain de sport préféré en 1 clic.",
       image: reservationQr,
       color: "#00bfff",
       store: "Disponible 24/7",
@@ -1129,7 +1127,6 @@ function Slide10() {
                 } as React.CSSProperties}
               >
                 <div className="relative flex flex-col items-center text-center">
-                  {/* Image QR Code */}
                   <div className="w-48 h-48 rounded-2xl mb-6 overflow-hidden border-2 transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl relative"
                     style={{ borderColor: `${qr.color}44`, boxShadow: `0 0 30px ${qr.color}20` }}
                   >
