@@ -69,6 +69,12 @@ import { MdQrCode } from "react-icons/md";
 import logoAsset from "@/assets/play.png";
 import sportVideo from "@/assets/sport-hero.mp4";
 
+// Import des images QR codes
+// Placez vos images dans src/assets/qr-codes/
+import appQr from "@/assets/accueil.png";
+import reservationQr from "@/assets/dashboard.png";
+import tournoiQr from "@/assets/tournoi.png";
+
 /* ───────────────────────── Reveal hook ───────────────────────── */
 function useReveal() {
   useEffect(() => {
@@ -219,7 +225,7 @@ function SlideBadge({ n, label, dark = false, icon: Icon }: { n: string; label: 
   );
 }
 
-/* ───────────────────────── Slide 1 — Cover ───────────────────────── */
+/* ───────────────────────── Slide 1 — Cover (TEXTE EN BLANC) ───────────────────────── */
 function Slide1() {
   return (
     <Section id="top" dark className="min-h-screen flex items-center">
@@ -249,18 +255,19 @@ function Slide1() {
             <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#39ff14]/50" />
           </div>
           
-        <div className="relative">
-  <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-black leading-[1.02] relative z-10">
-    <span className="text-white/10 absolute -top-4 left-0 text-7xl md:text-9xl lg:text-9xl font-black tracking-wider whitespace-nowrap select-none -z-10">
-      Le sport
-    </span>
-    Le sport <br />
-    est{" "}
-    <span className="bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent">
-      partout.
-    </span>
-  </h1>
-</div>
+          <div className="relative">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-white leading-[1.02] relative z-10">
+              <span className="text-white/5 absolute -top-4 left-0 text-7xl md:text-9xl lg:text-9xl font-black tracking-wider whitespace-nowrap select-none -z-10">
+                Le sport
+              </span>
+              {/* Texte en blanc pur */}
+              <span className="block text-white font-black">Le sport</span>
+              <span className="block text-white font-black">est</span>
+              <span className="block bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent font-black">
+                partout.
+              </span>
+            </h1>
+          </div>
           
           <div className="mt-4 flex items-center gap-4 text-white/50 text-sm font-display tracking-widest">
             <span className="flex items-center gap-2">
@@ -279,9 +286,9 @@ function Slide1() {
             </span>
           </div>
           
-          <p className="mt-6 text-xl md:text-2xl text-white/60 font-display font-medium tracking-wide max-w-2xl flex items-center gap-3">
-            <FaLink size={24} className="text-[whi]" />
-            Il est temps de le <span className="text-[#39ff14] animate-neon-flicker">connecter.</span>
+          <p className="mt-6 text-xl md:text-2xl text-white/70 font-display font-medium tracking-wide max-w-2xl flex items-center gap-3">
+            <FaLink size={24} className="text-[#39ff14]" />
+            Il est temps de le <span className="text-[#39ff14] animate-neon-flicker font-bold">connecter.</span>
           </p>
           
           <div className="mt-8 flex flex-wrap gap-3">
@@ -630,10 +637,7 @@ function Slide4() {
   );
 }
 
-/* ───────────────────────── Slide 5 — Value ─────────────────────────
-   FIX: hover:border-[${a.color}]/30 ne marchait jamais (chaîne "..." non
-   interpolée + Tailwind ne peut de toute façon pas lire une valeur JS
-   dynamique). On passe par une variable CSS --hc injectée via style. */
+/* ───────────────────────── Slide 5 — Value ───────────────────────── */
 function Slide5() {
   const actors = [
     {
@@ -718,8 +722,7 @@ function Slide5() {
   );
 }
 
-/* ───────────────────────── Slide 6 — Economic Model ─────────────────────────
-   FIX: même correctif que Slide5 pour hover:border-[${r.color}]/30 */
+/* ───────────────────────── Slide 6 — Economic Model ───────────────────────── */
 function Slide6() {
   const rows = [
     { label: "Sportifs", value: "Gratuit", color: "#39ff14", w: "100%", icon: FaGift, desc: "Accès illimité" },
@@ -958,7 +961,7 @@ function Slide8() {
   );
 }
 
-/* ───────────────────────── Slide 9 — Contact / Conclusion ───────────────────────── */
+/* ───────────────────────── Slide 9 — Contact / Conclusion (TEXTE EN BLANC) ───────────────────────── */
 function Slide9() {
   return (
     <Section id="contact" dark className="min-h-screen flex items-center">
@@ -985,8 +988,10 @@ function Slide9() {
         </div>
         
         <h2 className="font-display text-4xl md:text-7xl lg:text-8xl font-black leading-[1.05] max-w-5xl mx-auto">
-          Le futur du sport est en train de{" "}
-          <span className="bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent">
+          {/* Texte en blanc pur */}
+          <span className="block text-white font-black">Le futur du sport</span>
+          <span className="block text-white font-black">est en train de</span>
+          <span className="block bg-gradient-to-r from-[#39ff14] via-[#00bfff] to-[#8a2be2] bg-[length:300%_300%] animate-gradient-shift bg-clip-text text-transparent font-black">
             se connecter.
           </span>
         </h2>
@@ -1001,12 +1006,12 @@ function Slide9() {
           <FaGlobe size={24} className="text-[#ff007f]" />
         </div>
         
-        <p className="mt-8 text-lg md:text-2xl text-white/60 max-w-2xl mx-auto flex items-center justify-center gap-3">
+        <p className="mt-8 text-lg md:text-2xl text-white/80 max-w-2xl mx-auto flex items-center justify-center gap-3 font-medium">
           <FaHandshake size={24} className="text-[#39ff14]" />
-          Nous vous invitons à construire cette connexion avec nous.
+          <span>Nous vous invitons à construire cette connexion avec nous.</span>
         </p>
         
-        <div className="mt-6 flex items-center justify-center gap-6 text-white/20 text-sm">
+        <div className="mt-6 flex items-center justify-center gap-6 text-white/30 text-sm">
           <span className="flex items-center gap-2">
             <FaCheckCircle size={14} className="text-[#39ff14]" />
             Innovation
@@ -1039,8 +1044,8 @@ function Slide9() {
           </a>
         </div>
 
-        <div className="mt-16 flex items-center justify-center gap-6">
-          <div className="flex items-center gap-3 text-white/20">
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-6">
+          <div className="flex items-center gap-3 text-white/30">
             <FaTwitter size={18} className="hover:text-[#39ff14] transition cursor-pointer" />
             <FaInstagram size={18} className="hover:text-[#39ff14] transition cursor-pointer" />
             <FaLinkedinIn size={18} className="hover:text-[#39ff14] transition cursor-pointer" />
@@ -1061,29 +1066,28 @@ function Slide9() {
   );
 }
 
-/* ───────────────────────── Slide 10 — QR Codes ─────────────────────────
-   FIX: même correctif que Slide5/6 pour hover:border-[${qr.color}]/30 */
+/* ───────────────────────── Slide 10 — QR Codes (AVEC IMAGES) ───────────────────────── */
 function Slide10() {
   const qrCodes = [
     {
-      title: "Télécharger l'app",
-      desc: "Scannez pour télécharger l'application PlayForest sur votre smartphone.",
-      icon: FaMobileAlt,
+      title: "consulter le site ",
+      desc: "Scannez pour consulter l'application PlayForest sur votre smartphone.",
+      image: appQr,
       color: "#39ff14",
       store: "App Store & Play Store",
     },
     {
-      title: "Réserver un terrain",
-      desc: "Scannez pour réserver votre terrain de sport préféré en 1 clic.",
+      title: "Consultation du tableau de bord gestionnaire",
+      desc: "Scannez pour voir  le tableau de bord gestionnaire.",
+      image: reservationQr,
       color: "#00bfff",
-      icon: FaCalendarCheck,
       store: "Disponible 24/7",
     },
     {
       title: "Créer un tournoi",
       desc: "Scannez pour créer et gérer votre tournoi avec l'abonnement dédié.",
+      image: tournoiQr,
       color: "#ff8c00",
-      icon: FaTrophy,
       store: "Gestion complète",
     },
   ];
@@ -1114,23 +1118,32 @@ function Slide10() {
 
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {qrCodes.map((qr, i) => {
-            const Icon = qr.icon;
             return (
               <div
                 key={qr.title}
-                className="reveal group relative overflow-hidden rounded-3xl p-8 backdrop-blur-xl border border-white/5 bg-white/5 hover:border-[var(--hc)]/30 transition-all hover:shadow-2xl"
-                style={{ "--hc": qr.color, transitionDelay: `${i * 100}ms`, boxShadow: `0 20px 60px ${qr.color}10` } as React.CSSProperties}
+                className="reveal group relative overflow-hidden rounded-3xl p-8 backdrop-blur-xl border border-white/5 bg-white/5 hover:border-[var(--hc)]/30 transition-all hover:shadow-2xl hover:-translate-y-2"
+                style={{ 
+                  "--hc": qr.color, 
+                  transitionDelay: `${i * 100}ms`, 
+                  boxShadow: `0 20px 60px ${qr.color}10` 
+                } as React.CSSProperties}
               >
                 <div className="relative flex flex-col items-center text-center">
-                  <div
-                    className="w-48 h-48 rounded-2xl mb-6 flex flex-col items-center justify-center border-2 border-dashed transition-all duration-500 group-hover:scale-105"
-                    style={{ borderColor: `${qr.color}44`, background: `${qr.color}06` }}
+                  {/* Image QR Code */}
+                  <div className="w-48 h-48 rounded-2xl mb-6 overflow-hidden border-2 transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl relative"
+                    style={{ borderColor: `${qr.color}44`, boxShadow: `0 0 30px ${qr.color}20` }}
                   >
-                    <Icon size={48} style={{ color: qr.color }} />
-                    <span className="mt-3 text-xs font-display tracking-[0.3em] text-white/20 flex items-center gap-1">
-                      <MdQrCode size={12} style={{ color: qr.color }} />
-                      QR code
-                    </span>
+                    <img 
+                      src={qr.image} 
+                      alt={`QR Code ${qr.title}`}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-4">
+                      <span className="text-white text-xs font-display tracking-[0.3em] flex items-center gap-1">
+                        <MdQrCode size={12} style={{ color: qr.color }} />
+                        Scannez-moi
+                      </span>
+                    </div>
                   </div>
 
                   <h3 className="font-display text-xl font-bold text-white mb-2">{qr.title}</h3>
@@ -1151,7 +1164,7 @@ function Slide10() {
         <div className="mt-16 text-center">
           <p className="text-white/20 text-sm font-display tracking-[0.3em] flex items-center justify-center gap-2">
             <FaInfoCircle size={14} className="text-[#39ff14]" />
-            Les codes QR seront générés automatiquement une fois l'application déployée.
+            Scannez les QR codes pour accéder instantanément aux fonctionnalités
           </p>
         </div>
       </div>
