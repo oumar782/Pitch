@@ -1068,21 +1068,21 @@ function Slide9() {
 function Slide10() {
   const qrCodes = [
     {
-      title: "Télécharger l'app",
-      desc: "Scannez pour télécharger l'application PlayForest sur votre smartphone.",
+      title: "Consulter le site ",
+      desc: "Scannez pour consulter  l'application PlayForest sur votre smartphone.",
       image: appQr,
       color: "#39ff14",
       store: "App Store & Play Store",
     },
     {
-      title: "Réserver un terrain",
-      desc: "Scannez pour réserver votre terrain de sport préféré en 1 clic.",
+      title: "Consulter le dashboard gestionnaire",
+      desc: "Scannez pour consulter  le dashboard .",
       image: reservationQr,
       color: "#00bfff",
       store: "Disponible 24/7",
     },
     {
-      title: "Créer un tournoi",
+      title: "gestion  de  tournoi",
       desc: "Scannez pour créer et gérer votre tournoi avec l'abonnement dédié.",
       image: tournoiQr,
       color: "#ff8c00",
